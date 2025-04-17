@@ -208,12 +208,12 @@ for repeat_idx, seed in enumerate(random.sample(range(0, 1000), 10)):
         logging.info("{}time/10,ACC@1: {:4f}, ACC@5: {:4f}, ACC@10: {:4f},ACC@20: {:4f}, Macro@F: {:4f}, Macro@P: {:4f}, Macro@R: {:4f}".format(
             repeat_idx,acc_list[0].item(), acc_list[1].item(), acc_list[2].item(), acc_list[3].item(), acc_list[4], acc_list[5], acc_list[6]))
 
-        for label_class, idx_list in init_dataset.testclass_idx.items():
-            # 获取对应类别的标签和预测
-            class_labels = test_label[idx_list]
-            class_predictions = test_predictions[idx_list]
-            # 计算该类别的准确率
-            acc_list = accuracy(class_predictions, class_labels, topk=(1, 5, 10,20))
-            logging.info("usertype:{},{}time/10,ACC@1: {:4f}, ACC@5: {:4f}, ACC@10: {:4f},ACC@20: {:4f}, Macro@F: {:4f}, Macro@P: {:4f}, Macro@R: {:4f}".format(
-            label_class,repeat_idx,acc_list[0].item(), acc_list[1].item(), acc_list[2].item(), acc_list[3].item(), acc_list[4], acc_list[5], acc_list[6]))
+        # for label_class, idx_list in init_dataset.testclass_idx.items():
+        #     # 获取对应类别的标签和预测
+        #     class_labels = test_label[idx_list]
+        #     class_predictions = test_predictions[idx_list]
+        #     # 计算该类别的准确率
+        #     acc_list = accuracy(class_predictions, class_labels, topk=(1, 5, 10,20))
+        #     logging.info("usertype:{},{}time/10,ACC@1: {:4f}, ACC@5: {:4f}, ACC@10: {:4f},ACC@20: {:4f}, Macro@F: {:4f}, Macro@P: {:4f}, Macro@R: {:4f}".format(
+        #     label_class,repeat_idx,acc_list[0].item(), acc_list[1].item(), acc_list[2].item(), acc_list[3].item(), acc_list[4], acc_list[5], acc_list[6]))
 
