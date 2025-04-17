@@ -58,8 +58,8 @@ class InitDataset:
         self.vidx_to_geoid = self.strtogeoid()
         self.m_train_idx = self.obtain_training_idxes(self.m)
 
-        self.act_label_path = f"activate_label/{datasetname}-{user_num}-o-ulabel.csv"
-        self.user_act()
+        # self.act_label_path = f"activate_label/{datasetname}-{user_num}-o-ulabel.csv"
+        # self.user_act()
 
     def user_act(self):
         df =pd.read_csv(self.act_label_path,sep=';')
