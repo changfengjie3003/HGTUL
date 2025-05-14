@@ -28,8 +28,9 @@ class HyperConvNetwork(nn.Module):
             pois_embs = self.hconv_layer(pois_embs, H,W,traj_embs)  # [L, d]
             # pois_embs = self.hconv_layer(pois_embs, H,W)  # [L, d]
             # add residual connection to alleviate over-smoothing issue
+            pois_embs = self.dropout(pois_embs)
             pois_embs = pois_embs + final_pois_embs[-1]
-            # pois_embs = self.dropout(pois_embs)
+        
             final_pois_embs.append(pois_embs)
         final_pois_embs = torch.mean(torch.stack(final_pois_embs), dim=0)  # [L, d]
 
